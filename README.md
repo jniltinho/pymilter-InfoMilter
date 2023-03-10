@@ -107,6 +107,11 @@ In order to include InforMilter.py with ![Postfix](http://www.postfix.org/), min
 # pymilter-InfoMilter (info_milter)
 info_milter = inet:127.0.0.1:10099
 pf_milter = unix:/var/run/pf-milter/pf-milter.sock
+
+smtpd_recipient_restrictions =
+			reject_unauth_destination
+			check_policy_service unix:/var/run/pf-milter/pf-milter.sock
+ 
 ```
 
 #### ```/etc/postfix/master.cf```
@@ -413,3 +418,7 @@ A list of possible changes for the future:
 Many thanks for the great work, support and help to realize this project:
 
 - Stuart D. Gathman (stuart@gathman.org) [sdgathman/pymilter](https://github.com/sdgathman/pymilter)
+
+
+## Links
+ - https://www.linuxtopia.org/online_books/mail_systems/postfix_documentation/SMTPD_POLICY_README_002.html
