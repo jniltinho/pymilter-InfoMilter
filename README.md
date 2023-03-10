@@ -109,8 +109,8 @@ info_milter = inet:127.0.0.1:10099
 pf_milter = unix:/var/run/pf-milter/pf-milter.sock
 
 smtpd_recipient_restrictions =
-			reject_unauth_destination
-			check_policy_service unix:/var/run/pf-milter/pf-milter.sock
+	reject_unauth_destination
+	check_policy_service unix:/var/run/pf-milter/pf-milter.sock
  
 ```
 
