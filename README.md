@@ -106,6 +106,7 @@ In order to include InforMilter.py with ![Postfix](http://www.postfix.org/), min
 
 # pymilter-InfoMilter (info_milter)
 info_milter = inet:127.0.0.1:10099
+pf_milter = unix:/var/run/pf-milter/pf-milter.sock
 ```
 
 #### ```/etc/postfix/master.cf```
